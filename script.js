@@ -27,4 +27,4 @@ const searchByCity = (city, urlWeather) => {
       weatherByCity(coord.lat, coord.lon)
 
     }
-    )}
+    )};
