@@ -2,6 +2,7 @@ let currentSpeed
 let currentTemp
 let currentHumidity
 let currentName
+let weatherInfo
 
 document.getElementById('searchBtn').addEventListener('click', (event) => {
   event.preventDefault()
@@ -27,4 +28,23 @@ const searchByCity = (city, urlWeather) => {
       weatherByCity(coord.lat, coord.lon)
 
     }
-    )};
+    )}
+
+const weatherByCity = (lat, long) => {
+  let forecastURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=93174ff9c44d9901c3d587f4f99a19fc`
+  fetch(forecastURL)
+    .then(r => r.json())
+    .then(response => {
+
+      if (response !== undefined || response != null) {
+        weatherInfo = response
+        renderForecast()
+
+      }
+    })
+
+}
+
+const renderForecast (){
+  
+};
