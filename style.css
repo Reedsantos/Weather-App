@@ -1,0 +1,10 @@
+header {
+  text-align: center;
+  background-color: teal;
+  padding-bottom: 50px;
+  margin-bottom: 25px;
+}
+
+#searchBtn {
+  padding: 10px;
+}
